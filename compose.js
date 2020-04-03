@@ -1,6 +1,6 @@
 const compose1 = function (...funcs) {
 return function (initialArg) {
-funcs.reduceRight(function (acc, func) {
+funcs.reduce(function (acc, func) {
 return func(acc)
 }, initialArg)
 }
@@ -8,4 +8,4 @@ return func(acc)
 // or with arrow function:
 
 const compose2 = (...funcs) =>
-	initialArg => funcs.reduceRight((acc, func) => func(acc), initialArg);
+	initialArg => funcs.reduce((acc, func) => func(acc), initialArg);
